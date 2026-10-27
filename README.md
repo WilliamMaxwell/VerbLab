@@ -19,6 +19,7 @@ Keep these files together at the repository root:
 README.md
 index.html
 style.css
+vocabulary.js
 data.js
 app.js
 module-1-regular-verbs.pdf
@@ -43,7 +44,7 @@ Retry scores are separate from saved first-try totals.
 2. Create a private repository named `verb-lab`, or open your chosen repository.
 3. Use **Add file > Upload files** (or **uploading an existing file** in an empty
    repository).
-4. Select all eight extracted files and drag them into the upload area.
+4. Select all extracted files and drag them into the upload area.
 5. Commit the files to `main`.
 
 Upload the extracted files, not the ZIP. `index.html` should be visible directly
@@ -97,3 +98,34 @@ https://learn.microsoft.com/en-us/azure/static-web-apps/custom-domain-external
 Start with Module 1. Spend about ten minutes reading one pattern, trying a few
 forms, and explaining one mistake. Move to Module 2 when the regular patterns
 feel comfortable. Match your teacher's vocabulary and pacing where they differ.
+
+
+
+## Vocabulary expansion (October 2026)
+
+The original app taught 21 verbs (12 regular, 9 irregular) with 105 forms.
+It now teaches **40 verbs** (27 regular, 13 irregular) with 200 forms, plus
+**60 vocabulary terms/phrases**, for **100 learning entries**. These counts
+refer to dictionary entries, not every word appearing in explanations.
+
+The Vocabulary tab includes word lists, example sentences with translations,
+flashcards, ten-question recognition checks, missed-word retries, and a print
+button for the selected word list. Vocabulary-check scores are separate from
+saved verb totals. Conjugation questions now include contextual sentence clues.
+The existing PDFs remain the original foundation worksheets for Modules 1 and 2.
+
+### Curriculum basis
+
+Themes follow the public **Grade 7 Spanish Curriculum Overview 2024**, linked
+under Middlebrook Spanish Grade 7 on the Wilton Public Schools curriculum page:
+
+- https://www.wiltonps.org/258566_2
+- https://docs.google.com/document/d/1haRcno0UnyWQEUwqerVxkd8Kr3nRnKyMJ8AbpGnchOw/edit
+
+The five themes are identity/personality, family/celebrations, homes/chores,
+daily routines, and travel. Specific words and examples are original practice
+content selected to fit those themes. This is not an official or exhaustive
+Middlebrook vocabulary list, and the linked overview is dated 2024. Check
+current teacher materials for exact assignments and pacing. The school outline
+also includes reflexive verbs and preterite; this app's conjugation modules
+remain present-tense practice.
