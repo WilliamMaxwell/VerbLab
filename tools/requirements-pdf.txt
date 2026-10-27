@@ -1,0 +1,3 @@
+# Optional; only for regenerating the original foundation PDFs.
+# Version available in the environment used to create the documents.
+reportlab==4.4.9

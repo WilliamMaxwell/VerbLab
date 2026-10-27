@@ -1,0 +1,149 @@
+{
+  "hablar": [
+    "hablo",
+    "hablas",
+    "habla",
+    "hablamos",
+    "hablan"
+  ],
+  "estudiar": [
+    "estudio",
+    "estudias",
+    "estudia",
+    "estudiamos",
+    "estudian"
+  ],
+  "bailar": [
+    "bailo",
+    "bailas",
+    "baila",
+    "bailamos",
+    "bailan"
+  ],
+  "escuchar": [
+    "escucho",
+    "escuchas",
+    "escucha",
+    "escuchamos",
+    "escuchan"
+  ],
+  "comer": [
+    "como",
+    "comes",
+    "come",
+    "comemos",
+    "comen"
+  ],
+  "beber": [
+    "bebo",
+    "bebes",
+    "bebe",
+    "bebemos",
+    "beben"
+  ],
+  "aprender": [
+    "aprendo",
+    "aprendes",
+    "aprende",
+    "aprendemos",
+    "aprenden"
+  ],
+  "leer": [
+    "leo",
+    "lees",
+    "lee",
+    "leemos",
+    "leen"
+  ],
+  "vivir": [
+    "vivo",
+    "vives",
+    "vive",
+    "vivimos",
+    "viven"
+  ],
+  "escribir": [
+    "escribo",
+    "escribes",
+    "escribe",
+    "escribimos",
+    "escriben"
+  ],
+  "abrir": [
+    "abro",
+    "abres",
+    "abre",
+    "abrimos",
+    "abren"
+  ],
+  "recibir": [
+    "recibo",
+    "recibes",
+    "recibe",
+    "recibimos",
+    "reciben"
+  ],
+  "ser": [
+    "soy",
+    "eres",
+    "es",
+    "somos",
+    "son"
+  ],
+  "estar": [
+    "estoy",
+    "estás",
+    "está",
+    "estamos",
+    "están"
+  ],
+  "ir": [
+    "voy",
+    "vas",
+    "va",
+    "vamos",
+    "van"
+  ],
+  "tener": [
+    "tengo",
+    "tienes",
+    "tiene",
+    "tenemos",
+    "tienen"
+  ],
+  "hacer": [
+    "hago",
+    "haces",
+    "hace",
+    "hacemos",
+    "hacen"
+  ],
+  "poner": [
+    "pongo",
+    "pones",
+    "pone",
+    "ponemos",
+    "ponen"
+  ],
+  "querer": [
+    "quiero",
+    "quieres",
+    "quiere",
+    "queremos",
+    "quieren"
+  ],
+  "poder": [
+    "puedo",
+    "puedes",
+    "puede",
+    "podemos",
+    "pueden"
+  ],
+  "pedir": [
+    "pido",
+    "pides",
+    "pide",
+    "pedimos",
+    "piden"
+  ]
+}

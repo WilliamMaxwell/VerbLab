@@ -1,146 +1,95 @@
 # Verb Lab
 
-A gentle Spanish conjugation practice app for a seventh-grade learner.
-Lessons use Latin American Spanish and cover the present indicative.
+A calm Spanish practice app for a seventh-grade learner: learn a pattern,
+practice it, use it in a sentence, and revisit mistakes. The visual theme is
+inspired by Wilton's blue and white, with Middlebrook references. This is an
+independent study aid, not an official school application.
 
-## What is included
+- **Live app:** https://verblab.silofire.com/
+- **Repository:** https://github.com/WilliamMaxwell/VerbLab
+- **Hosting:** Azure Static Web Apps, Free plan; deployment from `main`.
+- **Scope:** Latin American Spanish, present indicative.
+- **Content:** 40 verbs / 200 conjugated forms, 60 vocabulary terms and phrases,
+  and 20 sentence-game templates across 8 subjects (160 combinations).
 
-- Module 1: regular -ar, -er, and -ir verbs.
-- Module 2: ser, estar, ir, tener, special yo forms, and stem changes.
-- Interactive verb builder, short untimed practice rounds, hints, accent reminders,
-  answer explanations, and missed-form retries.
-- Printable visual guides, six worksheets, a parent guide, and answer keys.
+## Continue development here
 
-## Files
+**Start with [the handoff guide](docs/HANDOFF.md).** It records the current
+state, user preferences, limitations, and instructions for the next session.
 
-Keep these files together at the repository root:
-
-```text
-README.md
-index.html
-style.css
-vocabulary.js
-sentence-game.js
-data.js
-app.js
-module-1-regular-verbs.pdf
-module-2-irregular-verbs.pdf
-parent-guide-and-answer-key.pdf
-```
-
-## Run locally
-
-Open `index.html` in a modern browser. No installation or build step is needed.
-An internet connection is used only for optional Google Fonts; system fonts work
-when offline. The app and PDF downloads work locally.
-
-Practice totals stay in the current browser, without syncing between devices.
-Some browsers do not retain progress for local files or in private mode.
-Scores count first tries, including answers after hints or accent reminders.
-Retry scores are separate from saved first-try totals.
-
-## Add these files to GitHub
-
-1. Extract the ZIP on your computer.
-2. Create a private repository named `verb-lab`, or open your chosen repository.
-3. Use **Add file > Upload files** (or **uploading an existing file** in an empty
-   repository).
-4. Select all extracted files and drag them into the upload area.
-5. Commit the files to `main`.
-
-Upload the extracted files, not the ZIP. `index.html` should be visible directly
-on the repository's main page, rather than inside an extra folder.
-
-## Deploy to Azure Static Web Apps
-
-In Azure, create **Static Web Apps**, select the **Free** plan, and connect this
-GitHub repository and its `main` branch. This is a static app with no backend.
-
-Use these build settings:
-
-| Setting | Value |
+| Document | Purpose |
 | --- | --- |
-| Build preset | Custom |
-| App location | `/` |
-| API location | Leave empty |
-| Output location | Leave empty |
+| [Handoff](docs/HANDOFF.md) | Fast orientation and a ready-to-paste continuation prompt |
+| [Architecture](docs/ARCHITECTURE.md) | Files, globals, rendering, state, storage, and dependencies |
+| [Learning and behavior](docs/LEARNING_AND_BEHAVIOR.md) | Activities, scoring rules, curriculum basis, and printables |
+| [Content inventory](docs/CONTENT_INVENTORY.md) | Every verb form, vocabulary entry, and matching template |
+| [Content authoring](docs/CONTENT_AUTHORING.md) | How to extend content without breaking agreement or answer choices |
+| [Operations](docs/OPERATIONS.md) | Local use, Azure deployment, DNS, verification, rollback, PDF sources |
+| [Quality and roadmap](docs/QUALITY_AND_ROADMAP.md) | Completed checks, known gaps, and the proposed faculty pilot |
+| [Decisions and history](docs/DECISIONS_AND_HISTORY.md) | Why the app is built this way and how it evolved |
+| [Agent guide](AGENTS.md) | Repository conventions for future coding sessions |
 
-Azure creates a GitHub Actions workflow and the deployment secret when you
-connect the repository. Keep the generated secret reference unchanged.
-Since this app has no build step, add `skip_app_build: true` under `with:` in the
-generated `Azure/static-web-apps-deploy` upload step. Its app settings should be:
+## Run it
 
-```yaml
-app_location: "/"
-api_location: ""
-output_location: ""
-skip_app_build: true
+Open `index.html` in a modern browser, or serve the repository root:
+
+```sh
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Commit any workflow change, then check the repository's **Actions** tab. Once
-deployment succeeds, open the website URL shown in the Azure resource.
+Open `http://127.0.0.1:8000/`. There is no build step, package installation,
+backend, database, or account requirement. Optional Google Fonts need internet;
+the app uses system fonts when they are unavailable. A service worker is not
+implemented, so an online visit does not make the hosted app reliably offline.
 
-Microsoft reference:
-https://learn.microsoft.com/en-us/azure/static-web-apps/build-configuration
+## Activities
 
-## Use your own subdomain
+- **Learn:** regular verb builder, ending map, irregular groups.
+- **Practice:** typed conjugations, sentence clues, hints, accent reminders,
+  answer explanations, and missed-form retries.
+- **Vocabulary:** themed word lists, flashcards, recognition checks, and printing.
+- **Match:** an English sentence card with subject, conjugated verb, and object
+  selections; regular, irregular, or mixed rounds.
+- **Print & keep:** two four-page foundational modules and a three-page parent
+  guide/answer key. The vocabulary word lists print separately from their tab.
 
-After the default Azure URL works, open the Static Web App's **Custom domains**
-settings and add your desired subdomain, such as `spanish.example.com`.
-Follow Azure's validation instructions. For an external DNS provider, this
-typically involves a CNAME from `spanish` to the exact generated Azure hostname.
-Azure provides the HTTPS certificate after the domain is validated.
+Only completed non-retry conjugation totals persist, under `verb-lab-v1` in the
+current browser's localStorage. Active rounds and vocabulary/matching scores
+are memory-only and reset on reload. There is no teacher dashboard or sync.
+These are practice scores, not validated measures of mastery.
 
-Microsoft reference:
-https://learn.microsoft.com/en-us/azure/static-web-apps/custom-domain-external
+## Check changes
 
-## Learning routine
+With Node.js available:
 
-Start with Module 1. Spend about ten minutes reading one pattern, trying a few
-forms, and explaining one mistake. Move to Module 2 when the regular patterns
-feel comfortable. Match your teacher's vocabulary and pacing where they differ.
+```sh
+node tools/check.cjs
+```
 
+This runs JavaScript syntax checks and the portable content/matching checks.
+It does not run browser automation or certify translations, accessibility, or
+school readiness. Follow [the manual checks](docs/QUALITY_AND_ROADMAP.md) too.
 
+After changing content, regenerate the reference inventory:
 
-## Vocabulary expansion (October 2026)
+```sh
+node tools/content-inventory.cjs
+```
 
-The original app taught 21 verbs (12 regular, 9 irregular) with 105 forms.
-It now teaches **40 verbs** (27 regular, 13 irregular) with 200 forms, plus
-**60 vocabulary terms/phrases**, for **100 learning entries**. These counts
-refer to dictionary entries, not every word appearing in explanations.
+The portable source for the original PDFs is retained in
+`tools/build-foundation-pdfs.py`; see [Operations](docs/OPERATIONS.md) before
+regenerating them. This documentation update does not replace the live PDFs.
 
-The Vocabulary tab includes word lists, example sentences with translations,
-flashcards, ten-question recognition checks, missed-word retries, and a print
-button for the selected word list. Vocabulary-check scores are separate from
-saved verb totals. Conjugation questions now include contextual sentence clues.
-The existing PDFs remain the original foundation worksheets for Modules 1 and 2.
+## Deployment and ownership
 
-### Curriculum basis
+The existing GitHub Actions workflow deploys pushes to `main` to Azure.
+The domain `silofire.com` is managed through Network Solutions; the `verblab`
+CNAME targets `lemon-ground-0f356a60f.5.azurestaticapps.net`.
+See [Operations](docs/OPERATIONS.md) for the exact current settings. Never commit
+deployment tokens or account credentials.
 
-Themes follow the public **Grade 7 Spanish Curriculum Overview 2024**, linked
-under Middlebrook Spanish Grade 7 on the Wilton Public Schools curriculum page:
+The repository contains a [GNU GPL v3 license](LICENSE).
 
-- https://www.wiltonps.org/258566_2
-- https://docs.google.com/document/d/1haRcno0UnyWQEUwqerVxkd8Kr3nRnKyMJ8AbpGnchOw/edit
-
-The five themes are identity/personality, family/celebrations, homes/chores,
-daily routines, and travel. Specific words and examples are original practice
-content selected to fit those themes. This is not an official or exhaustive
-Middlebrook vocabulary list, and the linked overview is dated 2024. Check
-current teacher materials for exact assignments and pacing. The school outline
-also includes reflexive verbs and preterite; this app's conjugation modules
-remain present-tense practice.
-
-
-
-## Sentence matching game
-
-Open the **Match** tab for an English flashcard prompt. Select a Spanish subject,
-conjugated verb, and object from three lists, then check the complete sentence.
-The live preview combines the selected pieces. Feedback explains each part and
-shows the correct Spanish sentence. Choose regular verbs (10 cards), irregular
-verbs (6 cards), or a mixed round (10 cards); retry missed cards after the round.
-Prompts distinguish formal/informal singular you and plural you all. Scores are
-first checks on complete sentences, including checks after hints; game scores
-remain separate from saved conjugation practice totals. Switching activity tabs
-preserves the matching round until the page reloads or the game is ended.
+Documentation reviewed against application commit
+`c0e07061a61db5dbf4f4f1eab0bf3c402e80e29f` on **2026-10-27**. Refresh counts and
+behavior descriptions as the implementation changes.
