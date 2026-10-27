@@ -20,6 +20,7 @@ README.md
 index.html
 style.css
 vocabulary.js
+sentence-game.js
 data.js
 app.js
 module-1-regular-verbs.pdf
@@ -129,3 +130,17 @@ Middlebrook vocabulary list, and the linked overview is dated 2024. Check
 current teacher materials for exact assignments and pacing. The school outline
 also includes reflexive verbs and preterite; this app's conjugation modules
 remain present-tense practice.
+
+
+
+## Sentence matching game
+
+Open the **Match** tab for an English flashcard prompt. Select a Spanish subject,
+conjugated verb, and object from three lists, then check the complete sentence.
+The live preview combines the selected pieces. Feedback explains each part and
+shows the correct Spanish sentence. Choose regular verbs (10 cards), irregular
+verbs (6 cards), or a mixed round (10 cards); retry missed cards after the round.
+Prompts distinguish formal/informal singular you and plural you all. Scores are
+first checks on complete sentences, including checks after hints; game scores
+remain separate from saved conjugation practice totals. Switching activity tabs
+preserves the matching round until the page reloads or the game is ended.
